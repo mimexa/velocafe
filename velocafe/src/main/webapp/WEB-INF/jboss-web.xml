@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+	<resource-ref>
+		<res-ref-name>hello</res-ref-name>
+		<jndi-name>java:/hello</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/velocafeDB</res-ref-name>
+		<jndi-name>java:jboss/jdbc/velocafeDB</jndi-name>
+	</resource-ref>
+</jboss-web>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:tag="http://velocafe.paris/velocafe/taglib"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition>
+	<a4j:outputPanel id="filtre">
+		<rich:accordion style="width:180px;">
+			<rich:accordionItem header="Fabricant">
+				<h:selectOneMenu value="#{filtreController.form.marque}"
+					style="width:100%">
+					<f:selectItems value="#{filtreController.form.marques}" />
+					<a4j:ajax render="@form" />
+				</h:selectOneMenu>
+			</rich:accordionItem>
+			<rich:accordionItem header="Etat">
+				<h:selectManyCheckbox value="#{filtreController.form.etat}">
+					<f:selectItem itemLabel="Neuf" itemValue="N" />
+					<f:selectItem itemLabel="Occasion" itemValue="O">
+					</f:selectItem>
+					<a4j:ajax render="@form" />
+				</h:selectManyCheckbox>
+				<h:panelGrid columns="2"
+					rendered="#{filtreController.rendered.isAnneesRendered()}">
+					<h:outputLabel for="anneeDebut" value="Année début" />
+					<h:selectOneMenu id="anneeDebut"
+						value="#{filtreController.form.anneeDebut}">
+						<f:selectItems value="#{filtreController.form.annees}" />
+						<a4j:ajax render="@form" />
+					</h:selectOneMenu>
+					<h:outputLabel for="anneeFin" value="Année fin" />
+					<h:selectOneMenu id="anneeFin"
+						value="#{filtreController.form.anneeFin}">
+						<f:selectItems value="#{filtreController.form.annees}" />
+						<a4j:ajax render="@form" />
+					</h:selectOneMenu>
+				</h:panelGrid>
+			</rich:accordionItem>
+			<rich:accordionItem header="Prix">
+				<h:panelGrid columns="2">
+					<tag:inputTextField id="prixMinimum"
+						value="#{filtreController.form.prixMinimum}"
+						label="Prix minimum €" />
+					<tag:inputTextField id="prixMaximum"
+						value="#{filtreController.form.prixMaximum}"
+						label="Prix maximum €" />
+				</h:panelGrid>
+			</rich:accordionItem>
+		</rich:accordion>
+		<rich:panel style="text-align: center;">
+			<a4j:commandButton action="#{filtreController.reset}"
+				value="Réinitialiser les filtres" render="filtre,mozaique" />
+		</rich:panel>
+	</a4j:outputPanel>
+</ui:composition>
+</html>

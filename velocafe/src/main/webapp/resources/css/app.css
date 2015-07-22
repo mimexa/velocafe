@@ -1,0 +1,21 @@
+.component-field {
+	margin-left: 5px;
+	display: inline;
+}
+
+.input-small {
+	width: 90px;
+}
+
+.btn {
+	margin-right: 5px;
+}
+
+.input-small {
+	width: 50px;
+	text-align: right;
+}
+
+.columns  {
+	vertical-align: top;
+}

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition>
+	<rich:panel style="position:relative; height:120px; width:160px;">
+		<h:graphicImage url="/resources/img/velosmall.jpg"
+			style="position: absolute;top:0; left:0;" width="160" />
+		<a4j:outputPanel>
+			<h:commandLink action="#{mozaiqueController.goToDetail(miniProduit)}">
+				<h:graphicImage url="/resources/img/glyphicons-52-eye-open.png"
+					style="position: absolute;top:5px; right:20px;" width="15" />
+			</h:commandLink>
+			<rich:tooltip followMouse="false" direction="topRight"
+				value="Afficher le produit" horizontalOffset="5" verticalOffset="5"
+				layout="block" />
+		</a4j:outputPanel>
+		<a4j:outputPanel>
+			<h:commandLink>
+				<h:graphicImage
+					url="/resources/img/glyphicons-203-shopping-cart.png"
+					style="position: absolute;top:3px; right:3px;" width="15" />
+			</h:commandLink>
+			<rich:tooltip followMouse="false" direction="topRight"
+				value="Ajouter au panier" horizontalOffset="5" verticalOffset="5"
+				layout="block" />
+		</a4j:outputPanel>
+		<h:commandLink action="#{mozaiqueController.goToDetail(miniProduit)}">
+			<h:graphicImage url="/resources/img/bar.png"
+				style="position: absolute; opacity: 0.9; bottom:0; left:0; vertical-align:bottom; height:20px"
+				width="100%" />
+			<h:outputText
+				value="#{miniProduit.marque} #{miniProduit.montantHT + miniProduit.montantTVA} €TTC"
+				style="position: absolute; bottom: 5px; right: 5px" />
+		</h:commandLink>
+	</rich:panel>
+</ui:composition>
+</html>

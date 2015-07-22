@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:sx="http://www.natixis.com/sphinx-jsf-ui/taglib">
+	<h:form>
+		<rich:panel
+			style="height:120px; position: relative; background-color:SaddleBrown;">
+			<h:link outcome="index.xhtml">
+				<h:graphicImage url="/resources/img/logo.gif"
+					style=" position: absolute; width: 90px" />
+			</h:link>
+			<ui:include src="neufMenu.xhtml" />
+			<ui:include src="occasionMenu.xhtml" />
+			<ui:include src="mesureMenu.xhtml" />
+			<ui:include src="locationMenu.xhtml" />
+			<ui:include src="reparationMenu.xhtml" />
+			<ui:include src="pratiqueMenu.xhtml" />
+		</rich:panel>
+	</h:form>
+</ui:composition>

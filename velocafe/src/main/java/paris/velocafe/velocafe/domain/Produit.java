@@ -3,6 +3,7 @@ package paris.velocafe.velocafe.domain;
 import java.util.Date;
 
 public class Produit {
+
 	private Long idProduit;
 	private String titre;
 	private String marque;
@@ -16,6 +17,7 @@ public class Produit {
 	private Date dateEntree;
 	private Date dateFabrication;
 	private String referenceTechnique;
+	private String couleur;
 
 	public Long getIdProduit() {
 		return idProduit;
@@ -23,6 +25,14 @@ public class Produit {
 
 	public void setIdProduit(Long idProduit) {
 		this.idProduit = idProduit;
+	}
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
 	}
 
 	public String getTitre() {
@@ -119,6 +129,23 @@ public class Produit {
 
 	public void setReferenceTechnique(String referenceTechnique) {
 		this.referenceTechnique = referenceTechnique;
+	}
+
+	public interface Props {
+		String idProduit = "idProduit";
+		String titre = "titre";
+		String marque = "marque";
+		String referenceFabricant = "referenceFabricant";
+		String montantHT = "montantHT";
+		String montantTVA = "montantTVA";
+		String idTechnique = "idTechnique";
+		String categorie = "categorie";
+		String sousCategorie = "sousCategorie";
+		String etat = "etat";
+		String dateEntree = "dateEntree";
+		String dateFabrication = "dateFabrication";
+		String referenceTechnique = "referenceTechnique";
+		String couleur = "couleur";
 	}
 
 }

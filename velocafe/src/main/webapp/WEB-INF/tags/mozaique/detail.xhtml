@@ -6,7 +6,7 @@
 	xmlns:a4j="http://richfaces.org/a4j">
 <ui:composition>
 	<rich:panel style="position:relative; height:120px; width:160px;">
-		<h:graphicImage url="/resources/img/velosmall.jpg"
+		<h:graphicImage url="/images?idImage=#{miniProduit.imageId}"
 			style="position: absolute;top:0; left:0;" width="160" />
 		<a4j:outputPanel>
 			<h:commandLink action="#{mozaiqueController.goToDetail(miniProduit)}">

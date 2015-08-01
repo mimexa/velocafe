@@ -18,6 +18,11 @@ public class ProduitDb {
 	private String marque; // MARQUE
 	private String titre; // TITRE
 	private String refProduit; // REF_PRODUIT
+	private String categorie;// CATEGORIE
+	private String sousCategorie;// SOUS_CATEGORIE
+	private String etat;// ETAT
+	private String refTechnique;// REF_TECHNIQUE
+	private Date dateFabrication;// DATE_FAB
 
 	public Long getIdProduit() {
 		return idProduit;
@@ -73,6 +78,61 @@ public class ProduitDb {
 
 	public void setRefProduit(String refProduit) {
 		this.refProduit = refProduit;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
+
+	public String getSousCategorie() {
+		return sousCategorie;
+	}
+
+	public void setSousCategorie(String sousCategorie) {
+		this.sousCategorie = sousCategorie;
+	}
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+
+	public String getRefTechnique() {
+		return refTechnique;
+	}
+
+	public void setRefTechnique(String refTechnique) {
+		this.refTechnique = refTechnique;
+	}
+
+	public Date getDateFabrication() {
+		return dateFabrication;
+	}
+
+	public void setDateFabrication(Date dateFabrication) {
+		this.dateFabrication = dateFabrication;
+	}
+
+	public interface Props {
+		String idProduit = "idProduit";
+		String montantHt = "montantHt";
+		String montantTva = "montantTva";
+		String dateCreation = "dateCreation";
+		String marque = "marque";
+		String titre = "titre";
+		String refProduit = "refProduit";
+		String categorie = "categorie";
+		String sousCategorie = "sousCategorie";
+		String etat = "etat";
+		String refTechnique = "refTechnique";
+		String dateFabrication = "dateFabrication";
 	}
 
 }

@@ -6,18 +6,25 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
-	<rich:dropDownMenu style="float: right">
+	<rich:dropDownMenu styleClass="dropDownMenuHead"
+		style="width:#{bannerController.dropDownMenuWidth}px;">
 		<f:facet name="label">
 			<h:panelGroup>
-				<h:outputText value="Location" />
+				<h:outputText value="#{messages['location']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Réserver un vélo" />
+		<rich:menuItem label="Réserver un vélo" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('RESERVER_VELO')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Réserver groupe (plus de 10 participants)" />
+		<rich:menuItem label="Réserver groupe (plus de 10 participants)"
+			styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('RESERVER_GROUPE')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Professionnels du tourisme" />
+		<rich:menuItem label="Professionnels du tourisme"
+			styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('TOURISME_PRO')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Livre d'or" />
+		<rich:menuItem label="Livre d'or" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('LIVRE_OR')}" />
 	</rich:dropDownMenu>
 </ui:composition>

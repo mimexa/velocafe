@@ -6,18 +6,23 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
-	<rich:dropDownMenu style="float: right">
+	<rich:dropDownMenu styleClass="dropDownMenuHead"
+		style="width:#{bannerController.dropDownMenuWidth}px;">
 		<f:facet name="label">
 			<h:panelGroup>
-				<h:outputText value="Informations pratiques" />
+				<h:outputText value="#{messages['infosPratiques']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Nous trouver" />
+		<rich:menuItem label="Nous trouver" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('NOUS_TROUVER')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Horaires" />
+		<rich:menuItem label="Horaires" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('HORAIRES')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Qui sommes nous ?" />
+		<rich:menuItem label="Qui sommes nous ?" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('QUI_SOMMES_NOUS')}" />
 		<rich:menuSeparator />
-		<rich:menuItem label="Partenaires" />
+		<rich:menuItem label="Partenaires" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('PARTENAIRES')}" />
 	</rich:dropDownMenu>
 </ui:composition>

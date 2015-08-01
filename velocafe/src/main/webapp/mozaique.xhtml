@@ -7,7 +7,10 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:tag="http://velocafe.paris/velocafe/taglib">
 <ui:composition>
-	<h:panelGrid columns="3">
+	<h:panelGrid columns="3"
+		style="position:absolute; left:#{mozaiqueController.leftPosition}px; top:0; margin-left:3px">
+		<f:event listener="#{mozaiqueController.refresh}"
+			type="javax.faces.event.PreRenderComponentEvent" />
 		<rich:dataGrid value="#{mozaiqueController.miniProduits}"
 			var="miniProduit" columns="2" elements="4" first="1">
 			<f:facet name="header">

@@ -16,6 +16,16 @@
 	text-align: right;
 }
 
-.columns  {
+.columns {
 	vertical-align: top;
+}
+
+.dropDownMenuItem {
+	text-align: left;
+}
+
+.dropDownMenuHead {
+	text-align: center;
+	display: inline;
+	float: right;
 }

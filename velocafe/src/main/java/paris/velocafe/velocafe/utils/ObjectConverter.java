@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import paris.velocafe.velocafe.domain.MiniProduit;
+import paris.velocafe.velocafe.domain.Produit;
 import paris.velocafe.velocafe.entity.ProduitDb;
 
 /**
@@ -31,6 +32,41 @@ public class ObjectConverter {
 			miniProduits.add(toMiniProduit(produitDb));
 		}
 		return miniProduits;
+	}
+
+	public static Produit toProduit(final ProduitDb produitDb) {
+		Produit produit = new Produit();
+		produit.setCategorie(produitDb.getCategorie());
+		produit.setCouleur(""); // TODO couleur impl
+		produit.setDateEntree(produitDb.getDateCreation());
+		produit.setDateFabrication(produitDb.getDateFabrication());
+		produit.setEtat(produitDb.getEtat());
+		produit.setIdProduit(produitDb.getIdProduit());
+		produit.setMarque(produitDb.getMarque());
+		produit.setMontantHT(produitDb.getMontantHt());
+		produit.setMontantTVA(produitDb.getMontantTva());
+		produit.setReferenceFabricant(produitDb.getRefProduit());
+		produit.setReferenceTechnique(produitDb.getRefTechnique());
+		produit.setSousCategorie(produitDb.getSousCategorie());
+		produit.setTitre(produitDb.getTitre());
+		return produit;
+	}
+
+	public static ProduitDb toProduitDb(final Produit produit) {
+		ProduitDb produitDb = new ProduitDb();
+		produitDb.setCategorie(produit.getCategorie());
+		produitDb.setDateCreation(CommonUtils.toSqlDate(produit.getDateEntree()));
+		produitDb.setDateFabrication(CommonUtils.toSqlDate(produit.getDateFabrication()));
+		produitDb.setEtat(produit.getEtat());
+		produitDb.setIdProduit(produit.getIdProduit());
+		produitDb.setMarque(produit.getMarque());
+		produitDb.setMontantHt(produit.getMontantHT());
+		produitDb.setMontantTva(produit.getMontantHT());
+		produitDb.setRefProduit(produit.getReferenceFabricant());
+		produitDb.setRefTechnique(produit.getReferenceTechnique());
+		produitDb.setSousCategorie(produit.getSousCategorie());
+		produitDb.setTitre(produit.getTitre());
+		return produitDb;
 	}
 
 }

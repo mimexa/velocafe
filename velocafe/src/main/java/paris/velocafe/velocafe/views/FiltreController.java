@@ -9,6 +9,7 @@ import org.apache.deltaspike.core.api.scope.ViewAccessScoped;
 
 import paris.velocafe.velocafe.forms.FiltreForm;
 import paris.velocafe.velocafe.rendered.FiltreRendered;
+import paris.velocafe.velocafe.utils.Graphics;
 
 /**
  * Controlleur du filtre de gauche
@@ -40,10 +41,23 @@ public class FiltreController implements Serializable {
 		return rendered;
 	}
 
+	public int getFiltreWidth() {
+		return Graphics.filtreWidth;
+	}
+
+	public int getTreeWidth() {
+		return Graphics.filtreWidth - 20;
+	}
+
 	// Actions
 
 	public void reset() {
 		form.reset();
+		form.refresh();
+	}
+
+	public void refresh() {
+		form.refresh();
 	}
 
 }

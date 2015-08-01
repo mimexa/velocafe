@@ -30,6 +30,46 @@
 		</attribute>
 	</tag>
 	<tag>
+		<description>Field</description>
+		<tag-name>tableInputTextField</tag-name>
+		<source>fields/tableInputTextField.xhtml</source>
+		<attribute>
+			<description>id unique</description>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<description>Label</description>
+			<name>label</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<description>Valeur</description>
+			<name>value</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<description>Classe css de l'input</description>
+			<name>inputStyleClass</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<tag>
+		<description>Field</description>
+		<tag-name>outputTextField</tag-name>
+		<source>fields/outputTextField.xhtml</source>
+		<attribute>
+			<description>Label</description>
+			<name>label</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<description>Valeur</description>
+			<name>value</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	<tag>
 		<description>Detail</description>
 		<tag-name>detail</tag-name>
 		<source>mozaique/detail.xhtml</source>
@@ -38,6 +78,26 @@
 			<name>miniProduit</name>
 			<required>true</required>
 		</attribute>
+	</tag>
+	<tag>
+		<description>Images produit</description>
+		<tag-name>img</tag-name>
+		<source>mozaique/img.xhtml</source>
+		<attribute>
+			<description>Unique id</description>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<description>id produit</description>
+			<name>idProduit</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	<tag>
+		<description>Contact</description>
+		<tag-name>contact</tag-name>
+		<source>static/contact.xhtml</source>
 	</tag>
 
 </facelet-taglib>

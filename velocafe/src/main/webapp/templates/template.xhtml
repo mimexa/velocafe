@@ -12,8 +12,10 @@
 		href="#{request.contextPath}/resources/img/favicon.gif" />
 </h:head>
 <h:body>
-	<ui:include src="header.xhtml" />
-	<ui:insert name="body">Default content</ui:insert>
-	<ui:include src="footer.xhtml" />
+	<f:view locale="#{bannerController.locale}">
+		<ui:include src="header.xhtml" />
+		<ui:insert name="body">Default content</ui:insert>
+		<ui:include src="footer.xhtml" />
+	</f:view>
 </h:body>
 </html>

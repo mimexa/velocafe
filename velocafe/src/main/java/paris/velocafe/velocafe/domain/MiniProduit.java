@@ -14,6 +14,7 @@ public class MiniProduit implements Comparable<MiniProduit> {
 	private String reference;
 	private double montantHT;
 	private double montantTVA;
+	private Long imageId;
 
 	public Long getIdProduit() {
 		return idProduit;
@@ -63,9 +64,27 @@ public class MiniProduit implements Comparable<MiniProduit> {
 		this.montantTVA = montantTVA;
 	}
 
+	public Long getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(Long imageId) {
+		this.imageId = imageId;
+	}
+
 	@Override
 	public int compareTo(MiniProduit miniProduit) {
 		return Integer.parseInt(String.valueOf(idProduit - miniProduit.idProduit));
+	}
+
+	public interface Props {
+		String ID_PRODUIT = "idProduit";
+		String TITRE = "titre";
+		String MARQUE = "marque";
+		String REFERENCE = "reference";
+		String MONTANT_HT = "montantHT";
+		String MONTANT_TVA = "montantTVA";
+		String IMAGE_ID = "imageId";
 	}
 
 }

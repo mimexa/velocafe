@@ -6,26 +6,41 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
-	<rich:dropDownMenu style="float: right">
+	<rich:dropDownMenu
+		style="width:#{bannerController.dropDownMenuWidth}px;"
+		styleClass="dropDownMenuHead">
 		<f:facet name="label">
 			<h:panelGroup>
-				<h:outputText value="Occasions" />
+				<h:outputText value="#{messages['occasions']}" />
 			</h:panelGroup>
 		</f:facet>
-		<rich:menuItem label="Tous les vélos" />
-		<rich:menuGroup label="Vélos">
-			<rich:menuItem label="Vélos de ville" />
-			<rich:menuItem label="Vélos électriques" />
-			<rich:menuItem label="VTT" />
-			<rich:menuItem label="Vélos polyvalents" />
-			<rich:menuItem label="Vélos pliables" />
+		<rich:menuItem label="Tous les vélos" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('TOUS_VELOS_OCCASIONS')}" />
+		<rich:menuGroup label="Vélos" styleClass="dropDownMenuItem">
+			<rich:menuItem label="Vélos de ville" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VELOS_OCCASIONS_VILLE')}" />
+			<rich:menuItem label="Vélos électriques"
+				styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VELOS_OCCASIONS_ELECTRIQUES')}" />
+			<rich:menuItem label="VTT" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VELOS_OCCASIONS_VTT')}" />
+			<rich:menuItem label="Vélos polyvalents"
+				styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VELOS_OCCASIONS_POLYVALENTS')}" />
+			<rich:menuItem label="Vélos pliables" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VELOS_OCCASIONS_PLIABLES')}" />
 		</rich:menuGroup>
 		<rich:menuSeparator />
-		<rich:menuItem label="Tous les accessoires" />
-		<rich:menuGroup label="Accessoires">
-			<rich:menuItem label="Pièces détachées" />
-			<rich:menuItem label="Casques" />
-			<rich:menuItem label="Vêtements" />
+		<rich:menuItem label="Tous les accessoires"
+			styleClass="dropDownMenuItem" action="#{bannerController.goTo('')}" />
+		<rich:menuGroup label="Accessoires" styleClass="dropDownMenuItem"
+			action="#{bannerController.goTo('TOUS_OCCASIONS_ACCESSOIRES')}">
+			<rich:menuItem label="Pièces détachées" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('PIECES_DETACHEES_OCCASIONS')}" />
+			<rich:menuItem label="Casques" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('CASQUES_OCCASIONS')}" />
+			<rich:menuItem label="Vêtements" styleClass="dropDownMenuItem"
+				action="#{bannerController.goTo('VETEMENTS_OCCASIONS')}" />
 		</rich:menuGroup>
 	</rich:dropDownMenu>
 </ui:composition>

@@ -10,14 +10,16 @@
 	<ui:define name="title">Vélo Café Paris</ui:define>
 	<ui:define name="body">
 		<h:form>
-			<ui:include src="img.xhtml" />
-			<rich:tabPanel>
-				<rich:tab header="Fiche"></rich:tab>
-				<rich:tab header="Spécifications">
-				</rich:tab>
-				<rich:tab header="Disponibilité">
-				</rich:tab>
-			</rich:tabPanel>
+			<f:event listener="#{produitController.init}"
+				type="javax.faces.event.PreRenderComponentEvent" />
+			<table>
+				<tr>
+					<td><ui:include src="produituserview.xhtml" /> <ui:include
+							src="produitadminview.xhtml" /></td>
+					<td style="vertical-align: top"><ui:include src="achat.xhtml" /></td>
+				</tr>
+				<ui:include src="annexes.xhtml" />
+			</table>
 		</h:form>
 	</ui:define>
 </ui:composition>

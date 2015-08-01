@@ -6,10 +6,13 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:tag="http://velocafe.paris/velocafe/taglib"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition>
 	<a4j:outputPanel id="filtre">
-		<rich:accordion style="width:180px;">
+		<f:event listener="#{filtreController.refresh}"
+			type="javax.faces.event.PreRenderComponentEvent" />
+		<rich:accordion style="width:#{filtreController.filtreWidth}px; ">
 			<rich:accordionItem header="Fabricant">
 				<h:selectOneMenu value="#{filtreController.form.marque}"
 					style="width:100%">
@@ -18,27 +21,30 @@
 				</h:selectOneMenu>
 			</rich:accordionItem>
 			<rich:accordionItem header="Etat">
-				<h:selectManyCheckbox value="#{filtreController.form.etat}">
-					<f:selectItem itemLabel="Neuf" itemValue="N" />
-					<f:selectItem itemLabel="Occasion" itemValue="O">
-					</f:selectItem>
+				<h:selectManyCheckbox value="#{filtreController.form.etat}"
+					layout="pageDirection">
+					<f:selectItems value="#{filtreController.form.etats.entrySet()}"
+						var="etat" itemLabel="#{etat.value}" itemValue="#{etat.key}" />
 					<a4j:ajax render="@form" />
 				</h:selectManyCheckbox>
-				<h:panelGrid columns="2"
+				<a4j:outputPanel
 					rendered="#{filtreController.rendered.isAnneesRendered()}">
-					<h:outputLabel for="anneeDebut" value="Année début" />
-					<h:selectOneMenu id="anneeDebut"
-						value="#{filtreController.form.anneeDebut}">
-						<f:selectItems value="#{filtreController.form.annees}" />
-						<a4j:ajax render="@form" />
-					</h:selectOneMenu>
-					<h:outputLabel for="anneeFin" value="Année fin" />
-					<h:selectOneMenu id="anneeFin"
-						value="#{filtreController.form.anneeFin}">
-						<f:selectItems value="#{filtreController.form.annees}" />
-						<a4j:ajax render="@form" />
-					</h:selectOneMenu>
-				</h:panelGrid>
+					<hr />
+					<h:panelGrid columns="2">
+						<h:outputLabel for="anneeDebut" value="Année début" />
+						<h:selectOneMenu id="anneeDebut"
+							value="#{filtreController.form.anneeDebut}">
+							<f:selectItems value="#{filtreController.form.annees}" />
+							<a4j:ajax render="@form" />
+						</h:selectOneMenu>
+						<h:outputLabel for="anneeFin" value="Année fin" />
+						<h:selectOneMenu id="anneeFin"
+							value="#{filtreController.form.anneeFin}">
+							<f:selectItems value="#{filtreController.form.annees}" />
+							<a4j:ajax render="@form" />
+						</h:selectOneMenu>
+					</h:panelGrid>
+				</a4j:outputPanel>
 			</rich:accordionItem>
 			<rich:accordionItem header="Prix">
 				<h:panelGrid columns="2">
@@ -50,10 +56,29 @@
 						label="Prix maximum €" />
 				</h:panelGrid>
 			</rich:accordionItem>
+			<rich:accordionItem header="Catégories">
+				<p:tree value="#{filtreController.form.categoriesTree}" var="pair"
+					selectionMode="checkbox"
+					selection="#{filtreController.form.selection}"
+					style="width: #{filtreController.treeWidth}px">
+					<p:treeNode>
+						<h:outputText value="#{pair.label}" />
+					</p:treeNode>
+				</p:tree>
+			</rich:accordionItem>
+			<rich:accordionItem header="Couleurs">
+				<h:selectManyCheckbox value="#{filtreController.form.couleur}"
+					layout="pageDirection">
+					<f:selectItems value="#{filtreController.form.couleurs}"
+						var="couleur" itemLabel="#{couleur.value}"
+						itemValue="#{couleur.key}" />
+					<a4j:ajax render="@form" />
+				</h:selectManyCheckbox>
+			</rich:accordionItem>
 		</rich:accordion>
 		<rich:panel style="text-align: center;">
 			<a4j:commandButton action="#{filtreController.reset}"
-				value="Réinitialiser les filtres" render="filtre,mozaique" />
+				value="Réinitialiser les filtres" render="@form" />
 		</rich:panel>
 	</a4j:outputPanel>
 </ui:composition>

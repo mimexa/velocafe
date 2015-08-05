@@ -23,6 +23,51 @@ public class ProduitDb {
 	private String etat;// ETAT
 	private String refTechnique;// REF_TECHNIQUE
 	private Date dateFabrication;// DATE_FAB
+	private String typeUsage; // TYP_USAGE VARCHAR(3)
+	private String diametreRoue; // DIAM_ROUE VARCHAR(5)
+	private String tailleCadre; // TAILL_CADRE VARCHAR(4)
+	private int dimensionCadre; // DIM_CADRE INT
+	private String disponibilite; // DISPO VARCHAR(5)
+
+	public int getDimensionCadre() {
+		return dimensionCadre;
+	}
+
+	public void setDimensionCadre(int dimensionCadre) {
+		this.dimensionCadre = dimensionCadre;
+	}
+
+	public String getTypeUsage() {
+		return typeUsage;
+	}
+
+	public void setTypeUsage(String typeUsage) {
+		this.typeUsage = typeUsage;
+	}
+
+	public String getDiametreRoue() {
+		return diametreRoue;
+	}
+
+	public void setDiametreRoue(String diametreRoue) {
+		this.diametreRoue = diametreRoue;
+	}
+
+	public String getTailleCadre() {
+		return tailleCadre;
+	}
+
+	public void setTailleCadre(String tailleCadre) {
+		this.tailleCadre = tailleCadre;
+	}
+
+	public String getDisponibilite() {
+		return disponibilite;
+	}
+
+	public void setDisponibilite(String disponibilite) {
+		this.disponibilite = disponibilite;
+	}
 
 	public Long getIdProduit() {
 		return idProduit;
@@ -133,6 +178,11 @@ public class ProduitDb {
 		String etat = "etat";
 		String refTechnique = "refTechnique";
 		String dateFabrication = "dateFabrication";
+		String typeUsage = "typeUsage"; // TYP_USAGE VARCHAR(3)
+		String diametreRoue = "diametreRoue"; // DIAM_ROUE VARCHAR(5)
+		String tailleCadre = "tailleCadre"; // TAILL_CADRE VARCHAR(4)
+		String dimensionCadre = "dimensionCadre"; // DIM_CADRE INT
+		String disponibilite = "disponibilite";
 	}
 
 }

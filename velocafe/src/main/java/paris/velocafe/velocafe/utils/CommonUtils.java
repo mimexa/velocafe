@@ -1,5 +1,6 @@
 package paris.velocafe.velocafe.utils;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.Collection;
@@ -7,6 +8,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
+import javax.faces.context.FacesContext;
 
 import paris.velocafe.velocafe.domain.Args;
 
@@ -74,12 +77,12 @@ public class CommonUtils {
 	 * Renvoie une url complete à partir de la page xhtml et d'une map des
 	 * paramètres valeurs
 	 */
-	public static <E> String toUrlAndParams(final XhtmlPages xhtmlPage, final Collection<Args<E>> params) {
+	public static <E> void toUrlAndParams(final XhtmlPages xhtmlPage, final Collection<Args<E>> params) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append(xhtmlPage);
 		String separator = Consts.QUOTE;
 		if (params != null) {
-			for (Args<E> param : params) {
+			for (Args<?> param : params) {
 				if (param != null) {
 					stringBuilder.append(separator);
 					separator = Consts.AND;
@@ -88,7 +91,17 @@ public class CommonUtils {
 				}
 			}
 		}
-		return stringBuilder.toString();
+		String path = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
+		String url = stringBuilder.toString();
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect(path + url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void toUrl(final XhtmlPages xhtmlPage) {
+		toUrlAndParams(xhtmlPage, null);
 	}
 
 	/**

@@ -48,4 +48,12 @@ public class ProduitService {
 	public int update(final Produit produit) {
 		return produitDao.update(ObjectConverter.toProduitDb(produit));
 	}
+
+	public Long getNewAvaibleId() {
+		return produitDao.getNewAvaibleId();
+	}
+
+	public void insert(final Produit produit) {
+		produitDao.insert(ObjectConverter.toProduitDb(produit));
+	}
 }

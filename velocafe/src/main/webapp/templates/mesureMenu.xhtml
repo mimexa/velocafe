@@ -7,7 +7,7 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
 	<rich:dropDownMenu styleClass="dropDownMenuHead"
-		style="width:#{bannerController.dropDownMenuWidth}px;">
+		rendered="#{versionManagerController.isRendered('mesureMenu')}">
 		<f:facet name="label">
 			<h:panelGroup>
 				<h:outputText value="#{messages['surMesure']}" />
@@ -15,8 +15,10 @@
 		</f:facet>
 		<rich:menuItem label="Assembler un vélo à la carte"
 			styleClass="dropDownMenuItem"
+			rendered="#{versionManagerController.isRendered('aLaCarte')}"
 			action="#{bannerController.goTo('ASSEMBLER_VELO')}" />
-		<rich:menuSeparator />
+		<rich:menuSeparator
+			rendered="#{versionManagerController.isRendered('aLaCarte')}" />
 		<rich:menuItem label="Nos réalisations" styleClass="dropDownMenuItem"
 			action="#{bannerController.goTo('REALISATIONS_ASSEMBLAGE')}" />
 	</rich:dropDownMenu>

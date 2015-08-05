@@ -18,6 +18,52 @@ public class Produit {
 	private Date dateFabrication;
 	private String referenceTechnique;
 	private String couleur;
+	private String disponibilite;
+
+	public String getDisponibilite() {
+		return disponibilite;
+	}
+
+	public void setDisponibilite(String disponibilite) {
+		this.disponibilite = disponibilite;
+	}
+
+	public String getTypeUsage() {
+		return typeUsage;
+	}
+
+	public void setTypeUsage(String typeUsage) {
+		this.typeUsage = typeUsage;
+	}
+
+	public String getDiametreRoue() {
+		return diametreRoue;
+	}
+
+	public void setDiametreRoue(String diametreRoue) {
+		this.diametreRoue = diametreRoue;
+	}
+
+	public String getTailleCadre() {
+		return tailleCadre;
+	}
+
+	public void setTailleCadre(String tailleCadre) {
+		this.tailleCadre = tailleCadre;
+	}
+
+	public int getDimensionCadre() {
+		return dimensionCadre;
+	}
+
+	public void setDimensionCadre(int dimensionCadre) {
+		this.dimensionCadre = dimensionCadre;
+	}
+
+	private String typeUsage; // TYP_USAGE VARCHAR(3)
+	private String diametreRoue; // DIAM_ROUE VARCHAR(5)
+	private String tailleCadre; // TAILL_CADRE VARCHAR(4)
+	private int dimensionCadre; // DIM_CADRE INT
 
 	public Long getIdProduit() {
 		return idProduit;

@@ -6,21 +6,54 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
-	<h:form>
+	<h:form
+		style="width:100%; background: #CACABC; position: fixed; margin: 0px; text-align:center; z-index:100">
 		<rich:panel
-			style="height:100px; position: relative; vertical-align:bottom">
-			<h:link outcome="index.xhtml">
-				<h:graphicImage url="/resources/img/logo.gif"
-					style="position: absolute; width: 90px; top:0; left:0; margin:5px" />
-			</h:link>
+			style="width:75%; min-width:800px; margin: 0 auto; height:100px; background-color: #CACABC; border: none; padding: 0;"
+			bodyClass="headerBody" id="headerPanel">
+			<a4j:outputPanel
+				style="position:absolute; left:0; top:0; margin: 5px">
+				<h:link outcome="index.xhtml">
+					<h:graphicImage url="/resources/img/logo.png"
+						style="width: 90px; margin-bottom: 5px" id="logo" />
+				</h:link>
+				<rich:tooltip value="Mon commentaire" />
+			</a4j:outputPanel>
 			<ui:include src="view.xhtml" />
-			<span style="position: absolute; bottom: 0; right: 0"> <ui:include
-					src="lang.xhtml" /> <ui:include src="administrationMenu.xhtml" />
-				<ui:include src="pratiqueMenu.xhtml" /> <ui:include
-					src="reparationMenu.xhtml" /> <ui:include src="mesureMenu.xhtml" />
-				<ui:include src="locationMenu.xhtml" /> <ui:include
-					src="occasionMenu.xhtml" /> <ui:include src="neufMenu.xhtml" />
-			</span>
+			<div style="position: absolute; right: 0; bottom: 0">
+				<ui:include src="lang.xhtml" />
+				<ui:include src="administrationMenu.xhtml" />
+				<ui:include src="pratiqueMenu.xhtml" />
+				<ui:include src="reparationMenu.xhtml" />
+				<ui:include src="mesureMenu.xhtml" />
+				<ui:include src="locationMenu.xhtml" />
+				<ui:include src="occasionMenu.xhtml" />
+				<ui:include src="neufMenu.xhtml" />
+			</div>
 		</rich:panel>
 	</h:form>
+	<h:outputScript>
+	//<![CDATA[
+	var maxHeightHeader=100;
+	var maxHeightLogo=90;
+	var minHeightHeader=50;
+	var minHeightLogo=45;
+	
+	$(window).scroll(function(){
+		var scrollTop=$(document).scrollTop();
+		var heightHeader=maxHeightHeader-scrollTop/5;
+		var heightLogo=maxHeightLogo-scrollTop/5;
+		if(heightHeader>=minHeightHeader){
+			$(#{rich:element('headerPanel')}).css("height",heightHeader);
+		}else{
+			$(#{rich:element('headerPanel')}).css("height",minHeightHeader);
+		}
+		if(heightLogo>=minHeightLogo){
+			$(#{rich:element('logo')}).css("width",heightLogo);
+		} else{
+			$(#{rich:element('logo')}).css("width",minHeightLogo);
+		}
+	});
+	//]]>
+	</h:outputScript>
 </ui:composition>

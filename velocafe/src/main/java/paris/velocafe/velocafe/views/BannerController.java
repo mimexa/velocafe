@@ -7,7 +7,6 @@ import static paris.velocafe.velocafe.utils.Constantes.Lang.*;
 import static paris.velocafe.velocafe.utils.Constantes.SousCategorie.*;
 import static paris.velocafe.velocafe.utils.XhtmlPages.*;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Locale;
@@ -22,6 +21,7 @@ import javax.inject.Named;
 import paris.velocafe.velocafe.domain.Args;
 import paris.velocafe.velocafe.forms.BannerForm;
 import paris.velocafe.velocafe.utils.CommonUtils;
+import paris.velocafe.velocafe.utils.Graphics;
 import paris.velocafe.velocafe.utils.XhtmlPages;
 
 /**
@@ -56,13 +56,8 @@ public class BannerController implements Serializable {
 
 	public void goTo(String dest) {
 		Consts.Destination destination = Consts.Destination.valueOf(dest);
-		String path = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
-		String url = CommonUtils.toUrlAndParams(Consts.xhtmlPages.get(destination), Consts.params.get(destination));
-		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect(path + url);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		CommonUtils.toUrlAndParams(Consts.xhtmlPages.get(destination), Consts.params.get(destination));
+
 	}
 
 	public void changeLanguage(String lang) {
@@ -75,7 +70,7 @@ public class BannerController implements Serializable {
 			form.setLang(EN);
 			form.setLocale(Locale.ENGLISH);
 		} else if (HD.equals(lang)) {
-			FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("hd"));
+			FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("nl"));
 			form.setLang(HD);
 			form.setLocale(Locale.ENGLISH);
 		}
@@ -86,9 +81,13 @@ public class BannerController implements Serializable {
 		return form.getLocale();
 	}
 
+	public int getFooterHeight() {
+		return Graphics.footerHeight;
+	}
+
 	@SuppressWarnings("unchecked")
 	private static class Consts {
-		static final int dropDownMenuWidth = 80;
+		static final int dropDownMenuWidth = 135;
 		static final Map<Destination, Set<Args<String>>> params = new HashMap<Destination, Set<Args<String>>>();
 		static final Map<Destination, XhtmlPages> xhtmlPages = new HashMap<Destination, XhtmlPages>();
 		static {

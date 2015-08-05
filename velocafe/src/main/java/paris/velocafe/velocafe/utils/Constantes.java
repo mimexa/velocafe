@@ -57,6 +57,12 @@ public interface Constantes {
 			String ETAT_PRODUIT = "ETAT";
 			String REF_TECHNIQUE_PRODUIT = "REF_TECHNIQUE";
 			String DATE_FAB_PRODUIT = "DATE_FAB";
+			String TYP_USAGE_PRODUIT = "TYP_USAGE";
+			String DIAM_ROUE_PRODUIT = "DIAM_ROUE";
+			String TAILL_CADRE_PRODUIT = "TAILL_CADRE";
+			String DIM_CADRE_PRODUIT = "DIM_CADRE";
+			String DISPO_PRODUIT = "DISPO";
+
 		}
 
 		interface Img {
@@ -76,7 +82,7 @@ public interface Constantes {
 	interface Lang {
 		String FR = "FR";
 		String EN = "EN";
-		String HD = "HD";
+		String HD = "NL";
 	}
 
 	interface Roles {

@@ -49,6 +49,11 @@ public class ObjectConverter {
 		produit.setReferenceTechnique(produitDb.getRefTechnique());
 		produit.setSousCategorie(produitDb.getSousCategorie());
 		produit.setTitre(produitDb.getTitre());
+		produit.setTypeUsage(produitDb.getTypeUsage());
+		produit.setDiametreRoue(produitDb.getDiametreRoue());
+		produit.setTailleCadre(produitDb.getTailleCadre());
+		produit.setDimensionCadre(produitDb.getDimensionCadre());
+		produit.setDisponibilite(produitDb.getDisponibilite());
 		return produit;
 	}
 

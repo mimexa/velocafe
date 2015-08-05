@@ -45,4 +45,12 @@ public class ProduitDaoImpl implements Serializable {
 	public int update(final ProduitDb produitDb) {
 		return DaoUtils.update(new JdbcTemplate(ds), produitDb, rowMapper);
 	}
+
+	public Long getNewAvaibleId() {
+		return DaoUtils.getNewAvaibleId(new JdbcTemplate(ds), rowMapper);
+	}
+
+	public void insert(ProduitDb produitDb) {
+		DaoUtils.insert(new JdbcTemplate(ds), produitDb, rowMapper);
+	}
 }

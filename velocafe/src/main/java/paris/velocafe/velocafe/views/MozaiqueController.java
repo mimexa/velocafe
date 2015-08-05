@@ -57,12 +57,6 @@ public class MozaiqueController implements Serializable {
 	}
 
 	public void goToDetail(MiniProduit miniProduit) {
-		String path = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
-		String url = CommonUtils.toUrlAndParams(XhtmlPages.PRODUIT_XHTML, Arrays.asList(new Args<Long>(ID_PRODUIT, miniProduit.getIdProduit())));
-		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect(path + url);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		CommonUtils.toUrlAndParams(XhtmlPages.PRODUIT_XHTML, Arrays.asList(new Args<Long>(ID_PRODUIT, miniProduit.getIdProduit())));
 	}
 }

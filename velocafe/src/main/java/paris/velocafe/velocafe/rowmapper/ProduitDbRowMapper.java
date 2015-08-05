@@ -28,6 +28,11 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 		produitDb.setEtat(rs.getString(ETAT_PRODUIT));
 		produitDb.setRefTechnique(rs.getString(REF_TECHNIQUE_PRODUIT));
 		produitDb.setDateFabrication(rs.getDate(DATE_FAB_PRODUIT));
+		produitDb.setTypeUsage(rs.getString(TYP_USAGE_PRODUIT)); // VARCHAR(3)
+		produitDb.setDiametreRoue(rs.getString(DIAM_ROUE_PRODUIT)); // VARCHAR(5)
+		produitDb.setTailleCadre(rs.getString(TAILL_CADRE_PRODUIT)); // VARCHAR(4)
+		produitDb.setDimensionCadre(rs.getInt(DIM_CADRE_PRODUIT)); // INT
+		produitDb.setDisponibilite(rs.getString(DISPO_PRODUIT));
 		return produitDb;
 	}
 
@@ -56,6 +61,11 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 			mapPropertiesColumns.put(etat, ETAT_PRODUIT);
 			mapPropertiesColumns.put(refTechnique, REF_TECHNIQUE_PRODUIT);
 			mapPropertiesColumns.put(dateFabrication, DATE_FAB_PRODUIT);
+			mapPropertiesColumns.put(typeUsage, TYP_USAGE_PRODUIT);
+			mapPropertiesColumns.put(diametreRoue, DIAM_ROUE_PRODUIT);
+			mapPropertiesColumns.put(tailleCadre, TAILL_CADRE_PRODUIT);
+			mapPropertiesColumns.put(dimensionCadre, DIM_CADRE_PRODUIT);
+			mapPropertiesColumns.put(disponibilite, DISPO_PRODUIT);
 		}
 	}
 

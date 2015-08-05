@@ -16,16 +16,108 @@
 	text-align: right;
 }
 
+.input-big {
+	width: 250px;
+	text-align: left;
+}
+
 .columns {
 	vertical-align: top;
 }
 
 .dropDownMenuItem {
 	text-align: left;
+	border-radius: 25px;
+	font-size: 13px !important;
+	border: medium;
 }
 
 .dropDownMenuHead {
 	text-align: center;
 	display: inline;
 	float: right;
+	background-color: #b79e6c;
+	border-radius: 25 px;
+	font-size: 14px !important;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	border-radius: 25px;
+	width: 150px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.tabFiche {
+	min-height: 300px;
+}
+
+.headerPanel {
+	border-radius: 25px;
+	padding-left: 15px !important;
+	font-size: 16px !important;
+}
+
+.footerHeaderPanel {
+	border-radius: 25px;
+	padding-left: 15px !important;
+	border: none;
+	font-size: 12px !important;
+}
+
+.headerBody {
+	position: relative;
+	margin: 0;
+	padding: 0 !important;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.accordionHeader {
+	border-radius: 25px;
+	font-size: 15px !important;
+	margin-top: 4px;
+}
+
+.dropDownMenuItem.rf-ddm-itm-unsel {
+	border-radius: 25px;
+}
+
+.rf-ddm-lst {
+	border-radius: 20px;
+	border: none;
+	background-color: #bea882 !important;
+}
+
+.rf-ddm-lst-bg {
+	border-radius: 20px;
+	border: none;
+}
+
+.rf-ddm-lst-bg {
+	background-image: none !important;
+}
+
+.rf-p-b {
+	font-size: 14px !important;
+}
+
+.footerStyle {
+	background-color: #cacabc !important;
+}
+
+.homeImg {
+	width: 200px;
+}
+
+.accordeonItem {
+	font-size: 14px !important;
+}
+
+.blanckBody {
+	border-radius: 25px;
+	background-color: #f1f1f1;
+	margin-top: 4px;
 }

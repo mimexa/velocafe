@@ -6,42 +6,55 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
-	<h:form>
-		<rich:panel style="overflow: hidden; padding-bottom: 10px; ">
-			<rich:panel header="Vente par correspondance"
-				style="float: left; width: 25%">
-				<ul>
-					<li><h:commandLink value="Vélos et accessoires" />
+	<h:form
+		style="width:75%; min-width:800px; margin: 0 auto; border-radius: 25px; background: #cacabc; margin-top: 5px">
+		<table style="width: 100%; padding: 10px">
+			<tr style="padding-top: 10px">
+				<td style="vertical-align: text-top;"><rich:panel
+						rendered="#{versionManagerController.isRendered('footer')}"
+						header="Vente par correspondance" headerClass="footerHeaderPanel"
+						styleClass="footerStyle">
 						<ul>
-							<li><h:commandLink value="Vélos de Ville" /></li>
-							<li><h:commandLink value="VTT" /></li>
-							<li><h:commandLink value="Vélos electriques" /></li>
-						</ul></li>
-					<li><h:commandLink value="Livraisons" /></li>
-				</ul>
-			</rich:panel>
-			<rich:panel header="Réparation et customisation"
-				style="float: left; width: 25%">
-				<ul>
-					<li><h:commandLink value="Vélos et accessoires" />
+							<li><h:commandLink value="Vélos et accessoires" />
+								<ul>
+									<li><h:commandLink value="Vélos de Ville" /></li>
+									<li><h:commandLink value="VTT" /></li>
+									<li><h:commandLink value="Vélos electriques" /></li>
+								</ul></li>
+							<li><h:commandLink value="Livraisons" /></li>
+						</ul>
+					</rich:panel></td>
+				<td style="vertical-align: text-top;"><rich:panel
+						header="Réparation et customisation"
+						rendered="#{versionManagerController.isRendered('footer')}"
+						headerClass="footerHeaderPanel" styleClass="footerStyle">
 						<ul>
-							<li><h:commandLink value="Véos de Ville" /></li>
-							<li><h:commandLink value="VTT" /></li>
-							<li><h:commandLink value="Vélos electriques" /></li>
-						</ul></li>
-					<li><h:commandLink value="Livraisons" /></li>
-				</ul>
-			</rich:panel>
-			<rich:panel header="A propos de VéloCafé"
-				style="float: left; margin-left:5px; width: 25%">
-				<ul>
-					<li><h:link value="Mentions légales" outcome="/mentions.xhtml" /></li>
-					<li><h:commandLink value="Données personelles" /></li>
-					<li><h:commandLink value="Qui sommes nous ?" /></li>
-				</ul>
-			</rich:panel>
-				Insérer le bloc d'adresse
-			</rich:panel>
-			Copyright c 2015-2015 véloCafé.paris. Tous droits réservéss.
-		</h:form>
+							<li><h:commandLink value="Vélos et accessoires" />
+								<ul>
+									<li><h:commandLink value="Véos de Ville" /></li>
+									<li><h:commandLink value="VTT" /></li>
+									<li><h:commandLink value="Vélos electriques" /></li>
+								</ul></li>
+							<li><h:commandLink value="Livraisons" /></li>
+						</ul>
+					</rich:panel></td>
+				<td style="vertical-align: text-top;"><rich:panel
+						rendered="#{versionManagerController.isRendered('footer')}"
+						headerClass="footerHeaderPanel" header="A propos de VéloCafé"
+						styleClass="footerStyle">
+						<ul>
+							<li><h:link value="Mentions légales"
+									outcome="/mentions.xhtml" /></li>
+							<li><h:commandLink value="Données personelles" /></li>
+							<li><h:commandLink value="Qui sommes nous ?" /></li>
+						</ul>
+					</rich:panel></td>
+			</tr>
+			<tr>
+				<td colspan="3"><h:outputText style="font-size: 12px"
+						value="Copyright &#169;2015-2015 véloCafé.paris. Tous droits réservés." />
+				</td>
+			</tr>
+		</table>
+	</h:form>
 </ui:composition>

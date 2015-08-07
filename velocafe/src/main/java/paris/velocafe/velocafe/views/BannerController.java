@@ -18,6 +18,9 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import org.jboss.security.auth.callback.SecurityAssociationHandler;
+import org.jboss.security.auth.spi.DatabaseServerLoginModule;
+
 import paris.velocafe.velocafe.domain.Args;
 import paris.velocafe.velocafe.forms.BannerForm;
 import paris.velocafe.velocafe.utils.CommonUtils;

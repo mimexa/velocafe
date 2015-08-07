@@ -33,6 +33,18 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 		produitDb.setTailleCadre(rs.getString(TAILL_CADRE_PRODUIT)); // VARCHAR(4)
 		produitDb.setDimensionCadre(rs.getInt(DIM_CADRE_PRODUIT)); // INT
 		produitDb.setDisponibilite(rs.getString(DISPO_PRODUIT));
+		produitDb.setUserSize(rs.getInt(USER_SIZE_PRODUIT)); // ADD COLUMN `USER_SIZE` INT NULL COMMENT '' AFTER `DISPO`,
+		produitDb.setStyle(rs.getString(STYLE_PRODUIT)); // ADD COLUMN `STYLE` VARCHAR(10) NULL COMMENT '' AFTER `USER_SIZE`,
+		produitDb.setOption1(rs.getString(OPTION_1_PRODUIT)); // ADD COLUMN `OPTION_1` VARCHAR(10) NULL COMMENT '' AFTER `STYLE`,
+		produitDb.setOption2(rs.getString(OPTION_2_PRODUIT)); // ADD COLUMN `OPTION_2` VARCHAR(10) NULL COMMENT '' AFTER `OPTION_1`,
+		produitDb.setOption3(rs.getString(OPTION_3_PRODUIT)); // ADD COLUMN `OPTION_3` VARCHAR(10) NULL COMMENT '' AFTER `OPTION_2`;
+		produitDb.setSizecategory(rs.getString(SIZE_CAT_PRODUIT)); // ADD COLUMN `SIZE_CAT` VARCHAR(10) NULL COMMENT '' AFTER `OPTION_3`,
+		produitDb.setWeightCategory(rs.getString(WEIGHT_CAT_PRODUIT)); // ADD COLUMN `WEIGHT_CAT` VARCHAR(10) NULL COMMENT '' AFTER `SIZE_CAT`,
+		produitDb.setPackageCategory(rs.getString(PACK_CAT_PRODUIT)); // ADD COLUMN `PACK_CAT` VARCHAR(10) NULL COMMENT '' AFTER `WEIGHT_CAT`,
+		produitDb.setStockOption(rs.getString(STOCK_OPTION_PRODUIT)); // ADD COLUMN `STOCK_OPTION` VARCHAR(10) NULL COMMENT '' AFTER `PACK_CAT`,
+		produitDb.setColor(rs.getString(COLOR_PRODUIT)); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
+		produitDb.setSuspensionSeat(rs.getString(SUSP_SEAT_PRODUIT)); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
+		produitDb.setEasyEntry(rs.getString(EASY_ENTRY_PRODUIT)); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
 		return produitDb;
 	}
 
@@ -66,6 +78,18 @@ public class ProduitDbRowMapper extends AbstractRowMapper<ProduitDb> {
 			mapPropertiesColumns.put(tailleCadre, TAILL_CADRE_PRODUIT);
 			mapPropertiesColumns.put(dimensionCadre, DIM_CADRE_PRODUIT);
 			mapPropertiesColumns.put(disponibilite, DISPO_PRODUIT);
+			mapPropertiesColumns.put(userSize, USER_SIZE_PRODUIT);
+			mapPropertiesColumns.put(style, STYLE_PRODUIT);
+			mapPropertiesColumns.put(option1, OPTION_1_PRODUIT);
+			mapPropertiesColumns.put(option2, OPTION_2_PRODUIT);
+			mapPropertiesColumns.put(option3, OPTION_3_PRODUIT);
+			mapPropertiesColumns.put(sizecategory, SIZE_CAT_PRODUIT); // ADD COLUMN `SIZE_CAT` VARCHAR(10) NULL COMMENT '' AFTER `OPTION_3`,
+			mapPropertiesColumns.put(weightCategory, WEIGHT_CAT_PRODUIT); // ADD COLUMN `WEIGHT_CAT` VARCHAR(10) NULL COMMENT '' AFTER `SIZE_CAT`,
+			mapPropertiesColumns.put(packageCategory, PACK_CAT_PRODUIT); // ADD COLUMN `PACK_CAT` VARCHAR(10) NULL COMMENT '' AFTER `WEIGHT_CAT`,
+			mapPropertiesColumns.put(stockOption, STOCK_OPTION_PRODUIT); // ADD COLUMN `STOCK_OPTION` VARCHAR(10) NULL COMMENT '' AFTER `PACK_CAT`,
+			mapPropertiesColumns.put(color, COLOR_PRODUIT); // ADD COLUMN `COLOR` VARCHAR(10) NULL COMMENT '' AFTER `STOCK_OPTION`,
+			mapPropertiesColumns.put(suspensionSeat, SUSP_SEAT_PRODUIT); // ADD COLUMN `SUSP_SEAT` VARCHAR(1) NULL COMMENT '' AFTER `COLOR`,
+			mapPropertiesColumns.put(easyEntry, EASY_ENTRY_PRODUIT); // ADD COLUMN `EASY_ENTRY` VARCHAR(1) NULL COMMENT '' AFTER `SUSP_SEAT`;
 		}
 	}
 

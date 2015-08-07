@@ -33,7 +33,7 @@ public class CommonUtils {
 	}
 
 	public static java.sql.Date toSqlDate(final java.util.Date date) {
-		return new java.sql.Date(date.getTime());
+		return date != null ? new java.sql.Date(date.getTime()) : null;
 	}
 
 	public static java.util.Date toUtilDate(final int day, final int month, final int year) {

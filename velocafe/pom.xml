@@ -21,8 +21,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 		<!-- Setting this property using archetype-metadata.xml requiredPorperty 
 			so that generated project uses correct version of WFK BOM. -->
